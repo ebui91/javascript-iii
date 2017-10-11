@@ -2,7 +2,7 @@
 // DESTRUCTURING
 // ========================
 
-// Use object destructuring to save the property values from the object carDetails into new variables. 
+// Use object destructuring to save the property values from the object carDetails into new variables.
 
 var carDetails = {
   color: 'red',
@@ -12,7 +12,7 @@ var carDetails = {
 }
 
 // CODE HERE
-
+const {color,make,model,year}=carDetails;
 
 // ========================
 
@@ -21,7 +21,7 @@ var carDetails = {
 
 function greeting( obj ) {
   // CODE HERE
-  
+  const {firstName,lastName,title}=obj;
   return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
 }
 
@@ -32,15 +32,19 @@ function greeting( obj ) {
 // Write a function called totalPopulation that will take in an object. That object will have 4 properties named utah, california, texas and arizona. The property values will be numbers. Use object destructuring to save the property values to new variables. Sum up the values and return the total number.
 
   // CODE HERE
-
+  const totalPopulation=({utah,california,texas,arizona})=>utah+california+texas+arizona;
 
 // ========================
 
 
-// Write a function called ingredients that will take in an object. This object will have 3 properties named carb, fat, and protein. The property values will be strings. Use object destructuring to save the property values to new variables. Push these new variables to an array and return the array. 
+// Write a function called ingredients that will take in an object. This object will have 3 properties named carb, fat, and protein. The property values will be strings. Use object destructuring to save the property values to new variables. Push these new variables to an array and return the array.
 
   // CODE HERE
-
+  const ingredients=({carb,fat,protein})=>{
+    let arr=[];
+    arr.push(carb,fat,protein);
+    return arr;
+  }
 
 // ========================
 
@@ -54,11 +58,20 @@ function greeting( obj ) {
 // Write a function called largeNumbers that will take a destructured object as it's parameter. The object properties will be named first, second, and third and their values will be numbers. Find the smallest number of the three and return that number.
 
   // CODE HERE
-
+  const largeNumbers=({first,second,third})=>Math.min(first,second,third);
 
 // ========================
 
 
-// Write a function called numberGroups that will take a destructured object as it's parameter. The object properties will be named a, b, and c and their values will be arrays of numbers. Find the longest array and return that array. 
+// Write a function called numberGroups that will take a destructured object as it's parameter. The object properties will be named a, b, and c and their values will be arrays of numbers. Find the longest array and return that array.
 
   // CODE HERE
+  const numberGroups=({a,b,c})=>{
+    if(Math.max(a.length,b.length,c.length)===a.length){
+      return a;
+    }else if(Math.max(a.length,b.length,c.length)===b.length){
+      return b;
+    }else if(Math.max(a.length,b.length,c.length)===c.length){
+      return c;
+    }
+  }

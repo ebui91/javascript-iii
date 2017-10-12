@@ -52,11 +52,7 @@ call your class Manager
 */
 class Manager extends Employee{
   constructor(first_name,last_name,email,age){
-    super();
-    this.first_name=first_name;
-    this.last_name=last_name;
-    this.email=email;
-    this.age=age;
+    super(first_name,last_name,email,age);
     this.reports=[];
   }
   hire(employee){
